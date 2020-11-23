@@ -9,6 +9,7 @@ h3 {
     font-family: "Arial Rounded MT Bold";
     letter-spacing: -0.009em;
     font-weight: normal;
+    text-align: center;
 }
 
 h3 {
@@ -17,7 +18,7 @@ h3 {
 
 .svg-icon {
     width: 2em;
-    filter: invert(1);
+    fill: white;
 
     &.down-arrow {
         transform: rotate(180deg);
@@ -25,7 +26,7 @@ h3 {
 
     @media (hover: hover) {
         &:hover {
-            filter: invert(0.8);
+            fill: $yellow;
         }
     }
 }
@@ -33,9 +34,10 @@ h3 {
 section {
     @include flexcolumn;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     color: white;
     position: relative;
+    border-bottom: 5px solid $darkgrey;
 
     &::after {
         content: "";
@@ -53,10 +55,16 @@ section {
 
     h1 {
         font-size: 239px;
+        @media screen and (max-width: 1000px) {
+            font-size: 20vw;
+        }
     }
 
     h2 {
         font-size: 37px;
+        @media screen and (max-width: 1000px) {
+            font-size: 5vw;
+        }
     }
 
     .section-wrapper {
@@ -64,10 +72,12 @@ section {
         min-height: 768px;
         max-width: 1366px;
         @include flexcolumn;
+        box-sizing: border-box;
+        padding: 0 1em;
     }
 }
 
-.hero {
+#hero {
     background-image: url("../../assets/pexels-cottonbro-4778621.jpg");
 
     &::after {
@@ -98,6 +108,12 @@ section {
             border-radius: 50px;
             color: white;
             font-family: $rounded;
+
+            @media (hover: hover) {
+                &:hover {
+                    background-color: $yellow;
+                }
+            }
         }
     }
 
@@ -109,12 +125,12 @@ section {
         }
     }
 
-    .go-down {
+    #go-down {
         margin-bottom: 2em;
     }
 }
 
-.pitch {
+#pitch {
     background-image: url("../../assets/pexels-tima-miroshnichenko-5453911.jpg");
 
     &::after {
@@ -122,7 +138,7 @@ section {
     }
 
     h2 {
-        margin: 2em 0 1em 0;
+        margin: 3em 0 1em 0;
     }
     .pitch-images {
         display: flex;
@@ -131,7 +147,8 @@ section {
         margin: 1em 0;
 
         img {
-            width: 400px;
+            width: 32%;
+            max-width: 400px;
             border-radius: 50px;
             filter: drop-shadow(0px 10px 20px #22222255);
         }
@@ -141,13 +158,17 @@ section {
         margin: 1em 0;
         max-width: 600px;
 
+        @media screen and (max-width: 1000px) {
+            max-width: 70vw;
+        }
+
         &:last-of-type {
             margin-bottom: 2em;
         }
     }
 }
 
-.credits {
+#credits {
     background-image: url("../../assets/pexels-fauxels-3184193.jpg");
 
     &::after {
@@ -160,5 +181,9 @@ section {
         h2 {
             margin: 2em;
         }
+    }
+
+    .youtube-embed {
+        max-width: 80%;
     }
 }

@@ -19,7 +19,7 @@
             </nav>
         </header>
         <main>
-            <section class="hero">
+            <section id="hero">
                 <div class="section-wrapper">
                     <div class="hero-buttons">
                         <a href="#"
@@ -34,17 +34,17 @@
                         <h1>moove.</h1>
                         <h2>find a home</h2>
                     </div>
-                    <button class="go-down">
+                    <a role="button" href="#pitch" id="go-down">
                         <img
                             class="svg-icon down-arrow"
                             src="./assets/up-arrow.svg"
                             alt=""
                             srcset=""
                         />
-                    </button>
+                    </a>
                 </div>
             </section>
-            <section class="pitch">
+            <section id="pitch">
                 <div class="section-wrapper">
                     <h2>We help you find better housing</h2>
                     <div class="pitch-images">
@@ -83,9 +83,10 @@
                     </p>
                 </div>
             </section>
-            <section class="credits">
+            <section id="credits">
                 <div class="section-wrapper">
                     <iframe
+                        class="youtube-embed"
                         width="720"
                         height="405"
                         src="https://www.youtube.com/embed/__w1g6IKiG4"
@@ -105,11 +106,16 @@
                                 By students in Cardiff, for students in Cardiff
                                 🏴󠁧󠁢󠁷󠁬󠁳󠁿
                             </p>
-                            <img
-                                class="google-map"
-                                src="./assets/Screenshot 2020-11-23 at 03.27.51.png"
-                                alt=""
-                            />
+                            <iframe
+                                class="google-map-embed"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9917.456493861882!2d-3.1718546274745414!3d51.477094592287436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486e1cd3220ffffd%3A0x7e2532858b6c0131!2s15%20Neptune%20Ct%2C%20Vanguard%20Way%2C%20Cardiff%20CF24%205PJ!5e0!3m2!1sen!2suk!4v1606150266607!5m2!1sen!2suk"
+                                height="250"
+                                frameborder="0"
+                                style="border: 0"
+                                allowfullscreen=""
+                                aria-hidden="false"
+                                tabindex="0"
+                            ></iframe>
                             <div class="icon-credits">
                                 Icons made by
                                 <a
@@ -193,7 +199,7 @@
     <script>
         function toggleScrollClass() {
             var nav = document.querySelectorAll(".navbar")[0];
-            window.pageYOffset > 50
+            window.pageYOffset > 100
                 ? nav.classList.add("display")
                 : nav.classList.remove("display");
         }
@@ -201,5 +207,48 @@
             toggleScrollClass();
         });
         toggleScrollClass();
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                document
+                    .querySelector(this.getAttribute("href"))
+                    .scrollIntoView({
+                        behavior: "smooth",
+                    });
+            });
+        });
+
+        document.querySelectorAll("img.svg-icon").forEach(el => {
+            const imgID = el.getAttribute("id");
+            const imgClass = el.getAttribute("class");
+            const imgURL = el.getAttribute("src");
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === 4) {
+                    const data = xhttp.response;
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(data, "text/html");
+                    let svg = xmlDoc.querySelector("svg");
+
+                    if (typeof imgID !== "undefined") {
+                        svg.setAttribute("id", imgID);
+                    }
+
+                    if (typeof imgClass !== "undefined") {
+                        svg.setAttribute("class", imgClass + " replaced-svg");
+                    }
+
+                    svg.removeAttribute("xmlns:a");
+
+                    el.parentNode.replaceChild(svg, el);
+                }
+            };
+
+            xhttp.open("GET", imgURL, true);
+            xhttp.send();
+        });
     </script>
 </html>

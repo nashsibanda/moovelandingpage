@@ -1,6 +1,6 @@
 .navbar {
     @include flexcolumn;
-    background-color: $trgreybrown;
+    background-color: $trxgreybrown;
     justify-content: center;
     height: 69px;
     position: fixed;
@@ -10,8 +10,10 @@
     z-index: 4;
     opacity: 0;
     transition: opacity 0.2s;
+    pointer-events: none;
 
     &.display {
+        pointer-events: all;
         opacity: 1;
         transition: opacity 0.2s;
     }

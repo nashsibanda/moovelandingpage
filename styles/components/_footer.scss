@@ -14,15 +14,21 @@ footer {
 
         .footer-wrapper {
             padding: 3em 1em 2em;
+            @media screen and (max-width: 1000px) {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
         }
 
         .map {
             .icon-credits {
                 font-size: 10px;
+                color: #999;
             }
 
-            .google-map {
-                max-width: 700px;
+            .google-map-embed {
+                width: 80vw;
+                max-width: 800px;
                 margin: 1em 0;
             }
         }
@@ -30,7 +36,13 @@ footer {
         .links {
             display: flex;
             justify-content: space-between;
-            min-width: 400px;
+            width: 50%;
+            max-width: 400px;
+
+            @media screen and (max-width: 1000px) {
+                margin-bottom: 1em;
+                width: 100%;
+            }
 
             .footer-nav {
                 li {
