@@ -19,9 +19,26 @@ h3 {
 .svg-icon {
     width: 2em;
     fill: white;
+    filter: drop-shadow(2px 2px 0px $greybrown);
 
     &.down-arrow {
         transform: rotate(180deg);
+    }
+
+    &.up-arrow {
+        z-index: 9;
+        position: fixed;
+        bottom: 4em;
+        right: 2em;
+        opacity: 0;
+        transition: opacity 0.2s;
+        pointer-events: none;
+
+        &.display {
+            pointer-events: all;
+            opacity: 1;
+            transition: opacity 0.2s;
+        }
     }
 
     @media (hover: hover) {
@@ -131,7 +148,6 @@ section {
             width: 3em;
         }
         margin-bottom: 2em;
-        filter: drop-shadow(2px 2px 0px $greybrown);
     }
 }
 

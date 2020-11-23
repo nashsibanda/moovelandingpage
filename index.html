@@ -10,7 +10,18 @@
         <header class="navbar">
             <nav>
                 <h1>moove.</h1>
-                <ul class="nav-menu">
+                <div id="menu-toggle">
+                    <div id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div id="cross">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <ul id="nav-menu">
                     <li><a href="#">Stay in Touch</a></li>
                     <li><a href="#">Register Interest</a></li>
                     <li><a href="#">Blog</a></li>
@@ -44,6 +55,14 @@
                     </a>
                 </div>
             </section>
+            <a role="button" href="#hero" id="go-up">
+                <img
+                    class="svg-icon up-arrow"
+                    src="./assets/up-arrow.svg"
+                    alt=""
+                    srcset=""
+                />
+            </a>
             <section id="pitch">
                 <div class="section-wrapper">
                     <h2>We help you find better housing</h2>
@@ -196,59 +215,5 @@
             </footer>
         </main>
     </body>
-    <script>
-        function toggleScrollClass() {
-            var nav = document.querySelectorAll(".navbar")[0];
-            window.pageYOffset > 100
-                ? nav.classList.add("display")
-                : nav.classList.remove("display");
-        }
-        window.addEventListener("scroll", function () {
-            toggleScrollClass();
-        });
-        toggleScrollClass();
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-
-                document
-                    .querySelector(this.getAttribute("href"))
-                    .scrollIntoView({
-                        behavior: "smooth",
-                    });
-            });
-        });
-
-        document.querySelectorAll("img.svg-icon").forEach(el => {
-            const imgID = el.getAttribute("id");
-            const imgClass = el.getAttribute("class");
-            const imgURL = el.getAttribute("src");
-            const xhttp = new XMLHttpRequest();
-
-            xhttp.onreadystatechange = function () {
-                if (xhttp.readyState === 4) {
-                    const data = xhttp.response;
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(data, "text/html");
-                    let svg = xmlDoc.querySelector("svg");
-
-                    if (typeof imgID !== "undefined") {
-                        svg.setAttribute("id", imgID);
-                    }
-
-                    if (typeof imgClass !== "undefined") {
-                        svg.setAttribute("class", imgClass + " replaced-svg");
-                    }
-
-                    svg.removeAttribute("xmlns:a");
-
-                    el.parentNode.replaceChild(svg, el);
-                }
-            };
-
-            xhttp.open("GET", imgURL, true);
-            xhttp.send();
-        });
-    </script>
+    <script src="./scripts/index.js"></script>
 </html>
