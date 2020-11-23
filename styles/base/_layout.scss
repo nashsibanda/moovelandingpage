@@ -86,6 +86,7 @@ section {
 
     .section-wrapper {
         justify-content: space-between;
+        height: 100vh;
     }
 
     .hero-buttons {
@@ -189,5 +190,6 @@ section {
 
     .youtube-embed {
         max-width: 80%;
+        filter: drop-shadow(0px 10px 20px #22222255);
     }
 }
