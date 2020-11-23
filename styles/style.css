@@ -204,7 +204,7 @@ section .section-wrapper {
 }
 
 #hero {
-  background-image: url("../../assets/pexels-cottonbro-4778621.jpg");
+  background-image: url("../assets/pexels-cottonbro-4778621.jpg");
 }
 
 #hero::after {
@@ -283,7 +283,7 @@ section .section-wrapper {
 }
 
 #pitch {
-  background-image: url("../../assets/pexels-tima-miroshnichenko-5453911.jpg");
+  background-image: url("../assets/pexels-tima-miroshnichenko-5453911.jpg");
 }
 
 #pitch::after {
@@ -330,7 +330,7 @@ section .section-wrapper {
 }
 
 #credits {
-  background-image: url("../../assets/pexels-fauxels-3184193.jpg");
+  background-image: url("../assets/pexels-fauxels-3184193.jpg");
 }
 
 #credits::after {
@@ -642,7 +642,7 @@ footer .main-footer .footer-wrapper {
   padding: 3em 1em 2em;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   footer .main-footer .footer-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -652,6 +652,13 @@ footer .main-footer .footer-wrapper {
         -ms-flex-align: center;
             align-items: center;
   }
+  footer .main-footer .footer-wrapper .map {
+    margin-top: 2em;
+  }
+}
+
+footer .main-footer .map {
+  margin-right: 4vw;
 }
 
 footer .main-footer .map .icon-credits {
@@ -661,7 +668,7 @@ footer .main-footer .map .icon-credits {
 
 footer .main-footer .map .google-map-embed {
   width: 80vw;
-  max-width: 800px;
+  max-width: 700px;
   margin: 1em 0;
 }
 
