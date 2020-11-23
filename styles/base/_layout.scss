@@ -1,5 +1,6 @@
 body {
     font-family: $sans-serif;
+    position: relative;
 }
 
 h1,
@@ -10,12 +11,22 @@ h3 {
     font-weight: normal;
 }
 
+h3 {
+    font-size: 24px;
+}
+
 .svg-icon {
     width: 2em;
     filter: invert(1);
 
     &.down-arrow {
         transform: rotate(180deg);
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            filter: invert(0.8);
+        }
     }
 }
 

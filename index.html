@@ -7,7 +7,7 @@
         <title>we are moove.</title>
     </head>
     <body>
-        <header>
+        <header class="navbar">
             <nav>
                 <h1>moove.</h1>
                 <ul class="nav-menu">
@@ -98,86 +98,108 @@
             </section>
             <footer>
                 <div class="main-footer">
-                    <div class="map">
-                        <h3>#wearemoove</h3>
-                        <p>
-                            By students in Cardiff, for students in Cardiff 🏴󠁧󠁢󠁷󠁬󠁳󠁿
-                        </p>
-                        <img
-                            src="./assets/Screenshot 2020-11-23 at 03.27.51.png"
-                            alt=""
-                        />
-                        <div>
-                            Icons made by
-                            <a
-                                href="https://www.flaticon.com/authors/freepik"
-                                title="Freepik"
-                                >Freepik</a
-                            >
-                            from
-                            <a href="https://www.flaticon.com/" title="Flaticon"
-                                >www.flaticon.com</a
-                            >
+                    <div class="footer-wrapper">
+                        <div class="map">
+                            <h3>#wearemoove</h3>
+                            <p>
+                                By students in Cardiff, for students in Cardiff
+                                🏴󠁧󠁢󠁷󠁬󠁳󠁿
+                            </p>
+                            <img
+                                class="google-map"
+                                src="./assets/Screenshot 2020-11-23 at 03.27.51.png"
+                                alt=""
+                            />
+                            <div class="icon-credits">
+                                Icons made by
+                                <a
+                                    href="https://www.flaticon.com/authors/freepik"
+                                    title="Freepik"
+                                    >Freepik</a
+                                >
+                                from
+                                <a
+                                    href="https://www.flaticon.com/"
+                                    title="Flaticon"
+                                    >www.flaticon.com</a
+                                >
+                            </div>
+                            <div class="icon-credits">
+                                Icons made by
+                                <a
+                                    href="https://www.flaticon.com/authors/pixel-perfect"
+                                    title="Pixel perfect"
+                                    >Pixel perfect</a
+                                >
+                                from
+                                <a
+                                    href="https://www.flaticon.com/"
+                                    title="Flaticon"
+                                    >www.flaticon.com</a
+                                >
+                            </div>
                         </div>
-                        <div>
-                            Icons made by
-                            <a
-                                href="https://www.flaticon.com/authors/pixel-perfect"
-                                title="Pixel perfect"
-                                >Pixel perfect</a
-                            >
-                            from
-                            <a href="https://www.flaticon.com/" title="Flaticon"
-                                >www.flaticon.com</a
-                            >
+                        <div class="links">
+                            <ul class="footer-nav">
+                                <li><h3>dive in.</h3></li>
+                                <li><a href="#">Register Interest</a></li>
+                                <li><a href="#">What's the 4/11?</a></li>
+                            </ul>
+                            <ul class="footer-nav">
+                                <li><h3>get involved.</h3></li>
+                                <li><a href="#">Review your House</a></li>
+                                <li><a href="#">Signup for Updates</a></li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="links">
-                        <ul class="footer-nav">
-                            <li><h3>dive in.</h3></li>
-                            <li><a href="#">Register Interest</a></li>
-                            <li><a href="#">What's the 4/11?</a></li>
-                        </ul>
-                        <ul class="footer-nav">
-                            <li><h3>get involved.</h3></li>
-                            <li><a href="#">Review your House</a></li>
-                            <li><a href="#">Signup for Updates</a></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <span>© moove 2020</span>
-                    <ul class="footer-social-links">
-                        <li>
-                            <a href="#"
-                                ><img
-                                    class="svg-icon"
-                                    src="./assets/002-instagram.svg"
-                                    alt=""
-                                    srcset=""
-                            /></a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                ><img
-                                    class="svg-icon"
-                                    src="./assets/003-twitter.svg"
-                                    alt=""
-                                    srcset=""
-                            /></a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                ><img
-                                    class="svg-icon"
-                                    src="./assets/001-facebook.svg"
-                                    alt=""
-                                    srcset=""
-                            /></a>
-                        </li>
-                    </ul>
+                    <div class="footer-wrapper">
+                        <span>© moove 2020</span>
+                        <ul class="footer-social-links">
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        class="svg-icon"
+                                        src="./assets/002-instagram.svg"
+                                        alt=""
+                                        srcset=""
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        class="svg-icon"
+                                        src="./assets/003-twitter.svg"
+                                        alt=""
+                                        srcset=""
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        class="svg-icon"
+                                        src="./assets/001-facebook.svg"
+                                        alt=""
+                                        srcset=""
+                                /></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </footer>
         </main>
     </body>
+    <script>
+        function toggleScrollClass() {
+            var nav = document.querySelectorAll(".navbar")[0];
+            window.pageYOffset > 50
+                ? nav.classList.add("display")
+                : nav.classList.remove("display");
+        }
+        window.addEventListener("scroll", function () {
+            toggleScrollClass();
+        });
+        toggleScrollClass();
+    </script>
 </html>

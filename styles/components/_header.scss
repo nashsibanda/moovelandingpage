@@ -1,8 +1,20 @@
-header {
+.navbar {
     @include flexcolumn;
-    background-color: $greybrown;
+    background-color: $trgreybrown;
     justify-content: center;
     height: 69px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    &.display {
+        opacity: 1;
+        transition: opacity 0.2s;
+    }
 
     nav {
         box-sizing: border-box;
@@ -28,13 +40,23 @@ header {
             max-width: 598px;
             width: 100%;
 
-            li {
-                // margin-left: 65px;
+            @media (hover: hover) {
+                a:hover {
+                    color: $yellow;
+                }
             }
 
             button {
                 border: 2px solid white;
                 padding: 1em 3em;
+                border-radius: 10px;
+                text-transform: uppercase;
+
+                @media (hover: hover) {
+                    &:hover {
+                        background-color: $yellow;
+                    }
+                }
             }
         }
     }
