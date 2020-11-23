@@ -41,7 +41,7 @@ small {
   vertical-align: inherit;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
-  background: inherit;
+  background: initial;
   overflow: inherit;
 }
 
@@ -87,5 +87,261 @@ h2,
 h3 {
   font-family: "Arial Rounded MT Bold";
   letter-spacing: -0.009em;
+  font-weight: normal;
+}
+
+.svg-icon {
+  width: 2em;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.svg-icon.down-arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-position: center;
+  background-size: 100%;
+  color: white;
+  position: relative;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+section > * {
+  z-index: 2;
+}
+
+section h1 {
+  font-size: 239px;
+}
+
+section h2 {
+  font-size: 37px;
+}
+
+section .section-wrapper {
+  width: 100%;
+  min-height: 768px;
+  max-width: 1366px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero {
+  background-image: url("../../assets/pexels-cottonbro-4778621.jpg");
+}
+
+.hero::after {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffc51854), to(#ffffff00));
+  background: linear-gradient(#ffc51854, #ffffff00);
+}
+
+.hero .section-wrapper {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero .hero-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 1em;
+}
+
+.hero .hero-buttons img {
+  width: 120px;
+}
+
+.hero .hero-buttons button {
+  background-color: #a8aaa9;
+  width: 232px;
+  height: 53px;
+  text-align: center;
+  border-radius: 50px;
+  color: white;
+  font-family: "Arial Rounded MT Bold";
+}
+
+.hero .main-titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero .main-titles h1,
+.hero .main-titles h2 {
+  -webkit-filter: drop-shadow(0px 10px 20px #22222255);
+          filter: drop-shadow(0px 10px 20px #22222255);
+}
+
+.hero .go-down {
+  margin-bottom: 2em;
+}
+
+.pitch {
+  background-image: url("../../assets/pexels-tima-miroshnichenko-5453911.jpg");
+}
+
+.pitch::after {
+  background: -webkit-gradient(linear, left top, left bottom, from(#55555588), to(#4e4835cc));
+  background: linear-gradient(#55555588, #4e4835cc);
+}
+
+.pitch h2 {
+  margin: 2em 0 1em 0;
+}
+
+.pitch .pitch-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.pitch .pitch-images img {
+  width: 400px;
+  border-radius: 50px;
+  -webkit-filter: drop-shadow(0px 10px 20px #22222255);
+          filter: drop-shadow(0px 10px 20px #22222255);
+}
+
+.pitch p {
+  margin: 1em 0;
+  max-width: 600px;
+}
+
+.pitch p:last-of-type {
+  margin-bottom: 2em;
+}
+
+.credits {
+  background-image: url("../../assets/pexels-fauxels-3184193.jpg");
+}
+
+.credits::after {
+  background: -webkit-gradient(linear, left top, left bottom, from(#55555588), to(#4e4835cc));
+  background: linear-gradient(#55555588, #4e4835cc);
+}
+
+.credits .section-wrapper {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.credits .section-wrapper h2 {
+  margin: 2em;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #a8aaa9;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 69px;
+}
+
+header nav {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 1em;
+  width: 100%;
+  max-width: 1366px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+}
+
+header nav h1 {
+  font-size: 31px;
+}
+
+header nav .nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  max-width: 598px;
+  width: 100%;
+}
+
+header nav .nav-menu button {
+  border: 2px solid white;
+  padding: 1em 3em;
 }
 /*# sourceMappingURL=style.css.map */

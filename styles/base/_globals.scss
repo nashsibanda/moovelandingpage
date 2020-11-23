@@ -1,3 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap");
 
 $sans-serif: "Open Sans", sans-serif;
+$rounded: "Arial Rounded MT Bold";
+
+$greybrown: #a8aaa9;
+$trgreybrown: #a8aaa977;
+$yellow: #ffc618;
+$tryellow: #ffc51854;
+$darkgrey: #525252;
+
+@mixin flexcolumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
