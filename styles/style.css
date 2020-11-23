@@ -255,6 +255,12 @@ section .section-wrapper {
 
 #hero #go-down {
   margin-bottom: 2em;
+  -webkit-filter: drop-shadow(2px 2px 0px #a8aaa9);
+          filter: drop-shadow(2px 2px 0px #a8aaa9);
+}
+
+#hero #go-down svg {
+  width: 3em;
 }
 
 #pitch {
