@@ -1,3 +1,3 @@
 # moovelandingpage
 
-A sample landing page design for [moove.to](https://moove.to/)
+A sample responsive landing page design for [moove.to](https://moove.to/)
