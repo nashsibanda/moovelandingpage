@@ -96,6 +96,10 @@ h3 {
   font-size: 24px;
 }
 
+img {
+  height: 100%;
+}
+
 .svg-icon {
   width: 2em;
   fill: white;
@@ -236,13 +240,16 @@ section .section-wrapper {
 }
 
 #hero .hero-buttons img {
-  width: 120px;
+  width: 25vw;
+  max-width: 120px;
 }
 
 #hero .hero-buttons button {
   background-color: #a8aaa9;
-  width: 232px;
-  height: 53px;
+  width: 100%;
+  margin-left: 2em;
+  max-width: 232px;
+  padding: 1em;
   text-align: center;
   border-radius: 50px;
   color: white;
@@ -292,7 +299,7 @@ section .section-wrapper {
 }
 
 #pitch h2 {
-  margin: 3em 0 1em 0;
+  margin: 4em 0 1em 0;
 }
 
 #pitch .pitch-images {
@@ -303,6 +310,9 @@ section .section-wrapper {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin: 1em 0;
 }
 
